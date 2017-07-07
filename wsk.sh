@@ -2,7 +2,7 @@
 
 #TODO: if [ "$1" == "install" ];
 
-if [ "$1" == "projectstart" ]
+if [ "$1" == "project-start" ]
 then
     #Create the container folder
     mkdir container
