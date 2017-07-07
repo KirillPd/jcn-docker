@@ -25,7 +25,8 @@ node_modules/
 # linux backup files
 *~
 
-# markup
+# project
+/container/
 /build/
 /assets/
 /production/
