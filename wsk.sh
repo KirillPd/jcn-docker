@@ -10,7 +10,7 @@ if [ "$1" == "project-start" ]; then
     #Execute jcn inside the container. Move files to tmp folder, delete Docker's files and install node modules
     docker exec -it $CONTAINER sh -c "./dockerrun.sh && rm -rf ../tmp/* && mv -f * ../tmp && cd ../tmp && find . -maxdepth 1 -iname \"[Dd]ocker*\" -delete && npm install && exit"
     #Stop and remove docker container
-    #docker kill $CONTAINER && docker rm $CONTAINER
+    docker kill $CONTAINER && docker rm $CONTAINER
 elif [ "$1" == "serve" ];
 then
     CONTAINER=$(docker run -dit $CONTAINER -p 8080:8080 -v $(pwd)/container:/var/app 39281706/wsk npm start) && docker logs $CONTAINER -f
